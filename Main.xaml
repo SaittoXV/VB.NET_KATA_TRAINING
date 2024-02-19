@@ -77,7 +77,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486.6666666666667,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim testString As String = &quot;Testing the String&quot;&#xD;&#xA;Console.WriteLine(testString)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486.6666666666667,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
       <ui:InvokeCode.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeCode.Arguments>
