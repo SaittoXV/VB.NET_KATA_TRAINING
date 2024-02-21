@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561.3333333333334,524" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Friday_13th" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561.3333333333334,546" sap2010:WorkflowViewState.IdRef="Friday_13th_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -32,8 +32,6 @@
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
-      <AssemblyReference>PresentationCore</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
@@ -53,35 +51,28 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>VB Code.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,459.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Friday_13th" sap:VirtualizedContainerService.HintSize="450,481.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim Input As String = &quot;Test&quot;&#xA;Dim TemptInput As String = &quot;&quot;&#xA;&#xA;For Each Item In Enumerable.Range(0, Len(Input) - 1)&#xA;&#x9;If Item = 0 Then&#xA;&#x9;&#x9;TemptInput = Asc(Input(Item).ToString).ToString&#xA;&#x9;Else If Item = (Len(Input) - 1)&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(1)&#xA;&#x9;Else&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(Item)&#xA;&#x9;End If&#xA;Next Item&#xA;&#xA;Console.WriteLine(TemptInput.ToString)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim processedYear As Integer = yearNumber&#xA;Dim processedDay As Integer = 13&#xA;Dim getDay As String&#xA;Dim processedDate As Date&#xA;Dim count As Integer = 0 &#xA;&#xA;For Each Item In  Enumerable.Range(1,12)&#xA;&#x9;processedDate =  DateTime.ParseExact(processedDay.ToString + &quot;/&quot; + Item.ToString + &quot;/&quot; + processedYear.ToString,&quot;dd/M/yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture)&#xA;&#x9;getDay = processedDate.DayOfWeek.ToString&#xA;&#x9;Console.WriteLine(Item.ToString)&#xA;&#x9;Console.WriteLine(getDay.ToString)&#xA;&#x9;If getDay.ToLower.Trim = &quot;friday&quot;&#xA;&#x9;&#x9;count +=1&#xA;&#x9;Else&#xA;&#x9;&#x9;Console.WriteLine(&quot;Not a Friday Babbyyyy&quot;)&#xA;&#x9;End If&#xA;Next Item&#xA;&#xA;Console.WriteLine(count.ToString)" DisplayName="Invoke Code - Friday 13th Kata" sap:VirtualizedContainerService.HintSize="388,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="yearNumber">2024</InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Break&quot;]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim processedYear As Integer = yearNumber&#xA;Dim processedDay As Integer = 13&#xA;Dim processedDate As Date&#xA;&#xA;Console.WriteLine( Enumerable.Range(1,12).Count(Function(month) New DateTime(processedYear,month,processedDay).DayOfWeek = DayOfWeek.Friday).ToString)" DisplayName="Invoke Code - Friday 13th Kata" sap:VirtualizedContainerService.HintSize="388,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="yearNumber">2024</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
   </Sequence>
 </Activity>
