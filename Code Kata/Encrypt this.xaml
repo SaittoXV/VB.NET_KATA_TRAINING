@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Encrypt_this" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561.3333333333334,458" sap2010:WorkflowViewState.IdRef="Encrypt_this_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Encrypt_this" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561.3333333333334,545.3333333333334" sap2010:WorkflowViewState.IdRef="Encrypt_this_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -58,16 +58,33 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Encrypt_this" sap:VirtualizedContainerService.HintSize="450,276" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Encrypt_this" sap:VirtualizedContainerService.HintSize="548.6666666666666,480.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim Input As String = &quot;abu&quot;&#xA;Dim TemptInput As String = &quot;&quot;&#xA;&#xA;For Each Item In Enumerable.Range(0, Len(Input) )&#xA;&#x9;If Item = 0 Then&#xA;&#x9;&#x9;TemptInput = Asc(Input(Item).ToString).ToString&#xA;&#x9;&#x9;Console.WriteLine(&quot;Array 0&quot; + TemptInput)&#xA;&#x9;Else If Item = 1&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(Len(Input) - 1)&#xA;&#x9;&#x9;Console.WriteLine(&quot;Array 1&quot; + TemptInput)&#xA;&#x9;Else If Item = (Len(Input) - 1)&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(1)&#xA;&#x9;&#x9;Console.WriteLine(&quot;Array Last&quot; + TemptInput)&#xA;&#x9;Else&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(Item)&#xA;&#x9;End If&#xA;Next Item&#xA;&#xA;Console.WriteLine(TemptInput.ToString)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim Input As String = &quot;abu&quot;&#xA;Dim TemptInput As String = &quot;&quot;&#xA;&#xA;For Each Item In Enumerable.Range(0, Len(Input) )&#xA;&#x9;If Item = 0 Then&#xA;&#x9;&#x9;TemptInput = Asc(Input(Item).ToString).ToString&#xA;&#x9;&#x9;Console.WriteLine(&quot;Array 0&quot; + TemptInput)&#xA;&#x9;Else If Item = 1&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(Len(Input) - 1)&#xA;&#x9;&#x9;Console.WriteLine(&quot;Array 1&quot; + TemptInput)&#xA;&#x9;Else If Item = (Len(Input) - 1)&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(1)&#xA;&#x9;&#x9;Console.WriteLine(&quot;Array Last&quot; + TemptInput)&#xA;&#x9;Else&#xA;&#x9;&#x9;TemptInput = TemptInput + Input(Item)&#xA;&#x9;End If&#xA;Next Item&#xA;&#xA;Console.WriteLine(TemptInput.ToString)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486.6666666666667,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,164.66666666666666" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Return String.Join(&quot; &quot;, input.Split(&quot; &quot;).Select(Function (word)&#xD;&#xA;            Select Case word.Length&#xD;&#xA;                Case 0&#xD;&#xA;                    Return &quot;&quot;&#xD;&#xA;                Case 1&#xD;&#xA;                    Return String.Format(&quot;{0:d}&quot;, Convert.ToByte(word(0)))&#xD;&#xA;                Case 2&#xD;&#xA;                    Return String.Format(&quot;{0:d}{1}&quot;, Convert.ToByte(word(0)), word(1))&#xD;&#xA;                Case 3&#xD;&#xA;                    Return String.Format(&quot;{0:d}{2}{1}&quot;, Convert.ToByte(word(0)), word(1), word(2))&#xD;&#xA;                Case Else &#xD;&#xA;                    Return String.Format(&quot;{0:d}{3}{2}{1}&quot;, Convert.ToByte(word(0)), word(1), word.Substring(2, word.Length - 3), word(word.Length - 1))&#xD;&#xA;            End Select" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388,165.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+            <ui:InvokeCode.Arguments>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
